@@ -31,7 +31,7 @@ function random_password($chars){
   $numbers = str_shuffle($numbers);
   $symbols = str_shuffle($symbols);
 
-  $random_password = substr($lower_case, 0, ($random_characters + $rest) );
+  $random_password = substr($lower_case, 0, ($random_characters + $rest) ); 
   $random_password .= substr($upper_case, 0, $random_characters);
   $random_password .= substr($numbers, 0, $random_characters);
   $random_password .= substr($symbols, 0, $random_characters);
@@ -52,7 +52,7 @@ function random_password($chars){
       </div>
       <div class="col">
         <?php
-        if (($_GET["passwordLenght"]) !== "NULL") {
+        if ( isset($_GET["passwordLenght"]) && (($_GET["passwordLenght"]) !== "NULL") ) {
           echo random_password($_GET["passwordLenght"]);
         }
         ?>
